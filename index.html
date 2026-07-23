@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ednara & Lourenço — Celebração de Casamento</title>
+    
+    <!-- Tipografia Clássica e Elegante -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --gold: #c5a059;
+            --gold-light: #fbf7ef;
+            --dark-green: #112822;
+            --bg-light: #fcfbfa;
+            --text-dark: #2c3230;
+            --text-muted: #6e7874;
+            --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+            --radius: 12px;
+            --header-height: 70px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            padding-top: var(--header-height);
+        }
+
+        h1, h2, h3, h4, .serif {
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        /* --- NAVBAR RESPONSIVA FIXA --- */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: var(--header-height);
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0,0,0,0.06);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 5%;
+        }
+
+        .nav-logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            font-style: italic;
+            color: var(--dark-green);
+            text-decoration: none;
+            letter-spacing: 1px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-size: 0.75rem;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--gold);
+        }
+
+        /* Botão Hamburger (Móvel) */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            padding: 5px;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 2px;
+            background-color: var(--dark-green);
+            transition: 0.3s;
+        }
+
+        /* --- HERO HEADER --- */
+        .hero-section {
+            position: relative;
+            width: 100vw;
+            min-height: 480px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 60px 20px;
+            background: linear-gradient(180deg, rgba(30, 35, 33, 0.65) 0%, rgba(20, 25, 23, 0.75) 100%), 
+                        url('img7.png') center/cover no-repeat;
+            color: #ffffff;
+        }
+
+        .hero-subtitle {
+            font-size: 0.75rem;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            color: #e5d3b3;
+            margin-bottom: 12px;
+            font-weight: 500;
+        }
+
+        .hero-title {
+            font-size: 4.5rem;
+            font-weight: 400;
+            font-style: italic;
+            line-height: 1.1;
+            margin-bottom: 35px;
+            color: #ffffff;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+
+        .countdown-container {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+        }
+
+        .countdown-box {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            padding: 10px 16px;
+            min-width: 65px;
+            text-align: center;
+        }
+
+        .countdown-num {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            font-weight: 600;
+            display: block;
+            line-height: 1;
+        }
+
+        .countdown-label {
+            font-size: 0.6rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #d1d5db;
+            margin-top: 4px;
+            display: block;
+        }
+
+        /* --- CONTAINER GERAL --- */
+        .main-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 70px 20px;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .section-title {
+            font-size: 2.2rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--text-dark);
+            font-weight: 400;
+        }
+
+        .section-desc {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-top: 8px;
+        }
+
+        /* --- SEÇÃO: A CELEBRAÇÃO --- */
+        .cards-grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            margin-bottom: 35px;
+        }
+
+        .card-item {
+            background: #ffffff;
+            border-radius: var(--radius);
+            padding: 35px 25px;
+            text-align: center;
+            box-shadow: var(--card-shadow);
+            border: 1px solid rgba(0,0,0,0.02);
+        }
+
+        .card-icon {
+            font-size: 1.8rem;
+            margin-bottom: 12px;
+            color: var(--gold);
+        }
+
+        .card-time {
+            font-size: 0.75rem;
+            letter-spacing: 2px;
+            color: var(--gold);
+            font-weight: 600;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .card-title {
+            font-size: 1.4rem;
+            color: var(--text-dark);
+            margin-bottom: 10px;
+        }
+
+        .card-text {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+
+        .notice-banner {
+            background: #fffdf5;
+            border: 1px solid #f3e8cb;
+            border-radius: 8px;
+            padding: 18px 25px;
+            font-size: 0.78rem;
+            color: #786438;
+            margin-bottom: 80px;
+        }
+
+        .notice-banner ul { list-style: none; }
+        .notice-banner li { position: relative; padding-left: 20px; margin-bottom: 6px; }
+        .notice-banner li:last-child { margin-bottom: 0; }
+        .notice-banner li::before { content: "•"; position: absolute; left: 5px; color: var(--gold); font-size: 1.2rem; line-height: 1; }
+
+        /* --- SEÇÃO: PRESENTES --- */
+        .present-section {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 50px 40px;
+            box-shadow: var(--card-shadow);
+            border: 1px solid rgba(0,0,0,0.03);
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .present-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin: 35px 0 30px;
+        }
+
+        .present-card {
+            background: #fafaf8;
+            border-radius: var(--radius);
+            padding: 30px 20px;
+            border: 1px solid #f0eee9;
+        }
+
+        .iban-wrapper {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 25px;
+            flex-wrap: wrap;
+        }
+
+        .iban-box {
+            background: #ffffff;
+            border: 1px solid #eae7e1;
+            border-radius: 8px;
+            padding: 15px 25px;
+            text-align: center;
+            min-width: 280px;
+        }
+
+        .iban-label { font-size: 0.7rem; letter-spacing: 1px; color: var(--text-muted); text-transform: uppercase; }
+        .iban-code { font-family: monospace; font-size: 0.95rem; font-weight: 700; color: var(--text-dark); margin: 6px 0; display: block; }
+        
+        .btn-copy {
+            background: transparent;
+            border: none;
+            color: var(--gold);
+            font-size: 0.75rem;
+            font-weight: 600;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* --- SEÇÃO: CONFIRMAR PRESENÇA --- */
+        .rsvp-section-dark {
+            background: var(--dark-green);
+            border-radius: 16px;
+            padding: 55px 30px;
+            text-align: center;
+            color: #ffffff;
+            box-shadow: 0 15px 35px rgba(17, 40, 34, 0.2);
+            max-width: 750px;
+            margin: 0 auto 90px;
+        }
+
+        .rsvp-title { font-size: 2.5rem; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 10px; color: #ffffff; font-weight: 400; }
+        .rsvp-subtitle { font-size: 0.82rem; color: #a3b8b0; margin-bottom: 35px; font-weight: 300; }
+        .rsvp-buttons { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
+
+        .btn-rsvp-outline {
+            border: 1px solid rgba(212, 175, 55, 0.5);
+            background: transparent;
+            color: #e5d3b3;
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-rsvp-outline:hover {
+            background: var(--gold);
+            color: var(--dark-green);
+            border-color: var(--gold);
+        }
+
+        /* --- MURAL INTELIGENTE --- */
+        .mural-card {
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 40px 30px;
+            text-align: center;
+            box-shadow: var(--card-shadow);
+            max-width: 650px;
+            margin: 0 auto;
+            border: 1px solid rgba(0,0,0,0.03);
+        }
+
+        .preset-msg-btn {
+            display: block;
+            width: 100%;
+            background: #fafaf8;
+            border: 1px solid #eae7e1;
+            padding: 12px 18px;
+            border-radius: 10px;
+            font-size: 0.82rem;
+            color: var(--text-dark);
+            text-align: left;
+            margin-bottom: 10px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .preset-msg-btn:hover {
+            border-color: var(--gold);
+            background: #fffdf5;
+        }
+
+        .custom-textarea {
+            width: 100%;
+            padding: 15px;
+            border: 1px solid #eae7e1;
+            border-radius: 10px;
+            font-family: inherit;
+            font-size: 0.85rem;
+            outline: none;
+            resize: vertical;
+            margin-bottom: 12px;
+        }
+
+        .custom-textarea:focus {
+            border-color: var(--gold);
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            font-size: 0.7rem;
+            letter-spacing: 2px;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            border-top: 1px solid #eaeaea;
+        }
+
+        /* --- RESPONSIVIDADE DO MENU E CONTEÚDO --- */
+        @media (max-width: 850px) {
+            .hamburger {
+                display: flex;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: var(--header-height);
+                left: 0;
+                width: 100%;
+                background: #ffffff;
+                flex-direction: column;
+                align-items: center;
+                gap: 20px;
+                padding: 30px 0;
+                box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+                transform: translateY(-150%);
+                transition: transform 0.4s ease;
+            }
+
+            .nav-links.active {
+                transform: translateY(0);
+            }
+
+            .cards-grid-3, .present-grid { grid-template-columns: 1fr; }
+            .hero-title { font-size: 3.2rem; }
+            .main-container { padding: 40px 15px; }
+            .present-section { padding: 35px 20px; }
+            .iban-wrapper { flex-direction: column; }
+            .iban-box { width: 100%; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVBAR RESPONSIVA -->
+    <nav class="navbar">
+        <a href="#" class="nav-logo"><img src="name.png" alt="" style="width: 80px;"></a>
+        
+        <button class="hamburger" id="menu-btn" aria-label="Abrir Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <ul class="nav-links" id="nav-links">
+            <li><a href="#celebracao" onclick="toggleMenu()">A Celebração</a></li>
+            <li><a href="#presentes" onclick="toggleMenu()">Presentes</a></li>
+            <li><a href="#confirmar" onclick="toggleMenu()">RSVP</a></li>
+            <li><a href="#mural" onclick="toggleMenu()">Mural</a></li>
+        </ul>
+    </nav>
+
+    <!-- HERO HEADER -->
+    <header class="hero-section">
+        <p class="hero-subtitle">A PRÓXIMA ETAPA DA NOSSA VIDA</p>
+        <h1 class="hero-title">Ednara & Lourenço</h1>
+
+        <div class="countdown-container">
+            <div class="countdown-box"><span class="countdown-num" id="days">00</span><span class="countdown-label">Dias</span></div>
+            <div class="countdown-box"><span class="countdown-num" id="hours">00</span><span class="countdown-label">Horas</span></div>
+            <div class="countdown-box"><span class="countdown-num" id="minutes">00</span><span class="countdown-label">Min</span></div>
+            <div class="countdown-box"><span class="countdown-num" id="seconds">00</span><span class="countdown-label">Seg</span></div>
+        </div>
+    </header>
+
+    <main class="main-container">
+
+        <!-- A CELEBRAÇÃO -->
+        <section id="celebracao">
+            <div class="section-header">
+                <h2 class="section-title">A Celebração</h2>
+            </div>
+
+            <div class="cards-grid-3">
+                <div class="card-item">
+                    <div class="card-icon">🏛️</div>
+                    <span class="card-time">10:30</span>
+                    <h3 class="card-title serif">Cerimónia Civil</h3>
+                    <p class="card-text"><b>Local:</b> a carregar...</p>
+                </div>
+
+                <div class="card-item">
+                    <div class="card-icon"><img src="reli.png" alt="" style="width: 40px;"></div>
+                    <span class="card-time">12:30</span>
+                    <h3 class="card-title serif">Cerimónia Religiosa</h3>
+                    <p class="card-text"><b>Local:</b> a carregar...</p>
+                </div>
+
+                <div class="card-item">
+                    <div class="card-icon">🥂</div>
+                    <span class="card-time">19:30</span>
+                    <h3 class="card-title serif">Copo d'Água & Festa</h3>
+                    <p class="card-text"><b>Local: Luanda - endereço será partilhado no convite físico com localização via GPS.</b></p>
+                </div>
+            </div>
+
+            <div class="notice-banner">
+                <ul>
+                    <li>Pedimos aos convidados que cheguem com 15 a 30 minutos de antecedência para acomodação e início no horário previsto.</li>
+                    <li>Código de Vestuário: Traje/vestes digna para a ocasião.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- PRESENTES -->
+        <section class="present-section" id="presentes">
+            <h2 class="section-title" style="font-size: 1.8rem;">Sua Presença Nosso Maior Presente!</h2>
+            <p class="section-desc">Para quem deseja contribuir para um momento memoravél, deixamos aqui algumas sugestões:</p>
+
+            <div class="present-grid">
+                <div class="present-card">
+                    <div style="font-size: 1.8rem; margin-bottom: 10px;">💝</div>
+                    <h3 class="serif" style="font-size: 1.3rem; margin-bottom: 8px;">Sua Presença, Nosso Maior Presente</h3>
+                    <p class="card-text">Ter você connosco para celebrar esse momento único é o que realmente importa.</p>
+                </div>
+
+                <div class="present-card">
+                    <div style="font-size: 1.8rem; margin-bottom: 10px;">🕊️</div>
+                    <h3 class="serif" style="font-size: 1.3rem; margin-bottom: 8px;">Ambiênte saudavél e cheio de paz!</h3>
+                    <p class="card-text">Dê o melhor de si para que o nosso momento seja realmente especial contigo e lhe deixe simples e lindas lembranças!</p>
+                </div>
+
+                <div class="present-card">
+                    <div style="font-size: 1.8rem; margin-bottom: 10px;">✨</div>
+                    <h3 class="serif" style="font-size: 1.3rem; margin-bottom: 8px;">A Nossa Maior Alegria</h3>
+                    <p class="card-text">Venha com o coração aberto para viver essa celebração inesquecível ao nosso lado!</p>
+                </div>
+            </div>
+
+            <div class="iban-wrapper">
+                <div class="iban-box">
+                    <span class="iban-label">Transferência Bancária (BAI):</span>
+                    <span class="iban-label"> <br>Ednara C. Magalhães</span>
+                    <span class="iban-code" id="iban1">AO06004000001234567810143</span>
+                    <button class="btn-copy" onclick="copyIBAN('iban1')">Copiar IBAN</button>
+                </div>
+
+                <div class="iban-box">
+                    <span class="iban-label">Transferência Bancária (BFA):</span>
+                    <span class="iban-label"><br>Lourenço P. Figueiredo</span>
+                    <span class="iban-code" id="iban2">AO06000600009876543210198</span>
+                    <button class="btn-copy" onclick="copyIBAN('iban2')">Copiar IBAN</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONFIRMAR PRESENÇA -->
+        <section class="rsvp-section-dark" id="confirmar">
+            <h2 class="rsvp-title serif">Confirmar Presença</h2>
+            <p class="rsvp-subtitle">A sua presença é muito importante para nós! Por favor, confirme a sua presença até ao dia limite (20 de Agosto).</p>
+
+            <div class="rsvp-buttons">
+                <a href="https://api.whatsapp.com/send?phone=244946337686&text=Ol%C3%A1!%20Gostaria%20de%20confirmar%20a%20minha%20presen%C3%A7a%20no%20casamento%20de%20Ednara%20e%20Louren%C3%A7o." target="_blank" class="btn-rsvp-outline">Confirmar Presença</a>
+                <a href="https://api.whatsapp.com/send?phone=244946337686&text=Ol%C3%A1!%20Infelizmente%20n%C3%A3o%20poderei%20comparecer%20ao%20casamento." target="_blank" class="btn-rsvp-outline">Não Poderei Comparecer</a>
+            </div>
+        </section>
+
+        <!-- MURAL INTELIGENTE -->
+        <section class="mural-card" id="mural">
+            
+            <!-- ESTADO 1: BLOQUEADO -->
+            <div id="mural-locked">
+                <span style="font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); font-weight: 600;">PARTILHE FOTOS/VIDEOS E SMS COM OS NUBENTES!</span>
+                <div style="font-size: 2.2rem; margin: 15px 0;">⏳</div>
+                <h3 class="serif" style="font-size: 1.8rem; margin-bottom: 8px;">O Mural abre às 19:30 no dia da festa!</h3>
+                <p class="card-text" style="margin-bottom: 15px;">Durante o Copo d'Água o mural ficará disponível para todos enviarem recados e fotos para os noivos.</p>
+                <button class="btn-rsvp-outline" style="color: var(--dark-green); border-color: var(--dark-green);" onclick="alert('O mural será desbloqueado automaticamente no dia 09/10/2026 às 19:30!')">Aguardar Abertura</button>
+            </div>
+
+            <!-- ESTADO 2: DESBLOQUEADO (EXIBIDO APÓS AS 19:30) -->
+            <div id="mural-unlocked" style="display: none;">
+                <span style="font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); font-weight: 600;">🎉 O MURAL ESTÁ ABERTO!</span>
+                <h3 class="serif" style="font-size: 2rem; margin: 8px 0 20px;">Deixe a sua mensagem aos noivos</h3>
+
+                <p style="font-size: 0.78rem; text-align: left; font-weight: 600; color: var(--text-muted); margin-bottom: 8px;">Escolha uma mensagem linda pronta:</p>
+                <button class="preset-msg-btn" onclick="sendPresetMsg('Que Deus abençoe Ricamente esta união! Que o amor de vocês cresça cada dia mais. Parabéns Ednara e Lourenço! ✨💍')">
+                    ✨ "Que Deus abençoe Ricamente esta união! Que o amor cresça cada dia mais..."
+                </button>
+                <button class="preset-msg-btn" onclick="sendPresetMsg('Que seja noite inesquecível! Desejo toda a felicidade do mundo, paz, cumplicidade e prosperidade nesta nova etapa! 🥂🎉')">
+                    🥂 "Que seja noite inesquecível! Desejo toda a felicidade, paz e cumplicidade..."
+                </button>
+                <button class="preset-msg-btn" onclick="sendPresetMsg('Vocês nasceram um para o outro. É uma honra testemunhar e celebrar este amor lindo hoje! Parabéns aos noivos! ❤️')">
+                    ❤️ "Vocês nasceram um para o outro. É uma honra testemunhar e celebrar este amor..."
+                </button>
+
+                <div style="margin-top: 25px; text-align: left;">
+                    <p style="font-size: 0.78rem; font-weight: 600; color: var(--text-muted); margin-bottom: 8px;">Ou escreva a sua própria mensagem:</p>
+                    <textarea id="custom-msg-input" class="custom-textarea" rows="3" placeholder="Escreva aqui o seu carinho para a Ednara & Lourenço..."></textarea>
+                    <button class="btn-rsvp-outline" style="background: var(--dark-green); color: white; width: 100%; border: none;" onclick="sendCustomMsg()">Enviar Minha Mensagem via WhatsApp 💬</button>
+                </div>
+
+                <div style="margin-top: 30px; padding-top: 20px; border-top: 1px dashed #eae7e1;">
+                    <p style="font-size: 0.85rem; font-weight: 600; color: var(--dark-green); margin-bottom: 6px;">📸 Tirou fotos ou vídeos bonitos da festa?</p>
+                    <p class="card-text" style="margin-bottom: 12px;">Partilhe esses momentos especiais diretamente com os noivos!</p>
+                    <button class="btn-rsvp-outline" style="color: var(--gold); border-color: var(--gold);" onclick="sharePhotoMoment()">Partilhar Fotos/Vídeos com o Casal 📲</button>
+                </div>
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 EDNARA & LOURENÇO — CELEBRANDO O AMOR</p>
+    </footer>
+
+    <!-- JAVASCRIPT -->
+    <script>
+        const phoneNoivos = "244946337686";
+
+        // Lógica do Menu Responsivo
+        const menuBtn = document.getElementById('menu-btn');
+        const navLinks = document.getElementById('nav-links');
+
+        menuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        function toggleMenu() {
+            if(window.innerWidth <= 850) {
+                navLinks.classList.remove('active');
+            }
+        }
+
+        // Datas
+        const weddingDate = new Date(2026, 9, 9, 15, 0, 0).getTime();
+        const muralUnlockDate = new Date(2026, 9, 9, 19, 30, 0).getTime();
+
+        function updateCountdownAndMural() {
+            const now = new Date().getTime();
+            
+            // Relógio
+            const difference = weddingDate - now;
+            if (difference > 0) {
+                const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+                document.getElementById('days').innerText = String(days).padStart(2, '0');
+                document.getElementById('hours').innerText = String(hours).padStart(2, '0');
+                document.getElementById('minutes').innerText = String(minutes).padStart(2, '0');
+                document.getElementById('seconds').innerText = String(seconds).padStart(2, '0');
+            }
+
+            // Mural
+            if (now >= muralUnlockDate) {
+                document.getElementById('mural-locked').style.display = 'none';
+                document.getElementById('mural-unlocked').style.display = 'block';
+            } else {
+                document.getElementById('mural-locked').style.display = 'block';
+                document.getElementById('mural-unlocked').style.display = 'none';
+            }
+        }
+
+        setInterval(updateCountdownAndMural, 1000);
+        updateCountdownAndMural();
+
+        function sendPresetMsg(text) {
+            const fullMsg = `*Mural de Recados — Ednara & Lourenço* 💖\n\n${text}`;
+            window.open(`https://api.whatsapp.com/send?phone=${phoneNoivos}&text=${encodeURIComponent(fullMsg)}`, '_blank');
+        }
+
+        function sendCustomMsg() {
+            const text = document.getElementById('custom-msg-input').value;
+            if(!text.trim()) {
+                alert('Por favor, escreva a sua mensagem antes de enviar!');
+                return;
+            }
+            const fullMsg = `*Mural de Recados — Ednara & Lourenço* 💖\n\n"${text}"`;
+            window.open(`https://api.whatsapp.com/send?phone=${phoneNoivos}&text=${encodeURIComponent(fullMsg)}`, '_blank');
+        }
+
+        function sharePhotoMoment() {
+            const photoMsg = `Olá Ednara & Lourenço! ✨📸\n\nQuero partilhar convosco algumas fotos/vídeos incríveis que tirei deste momento inesquecível no vosso casamento!`;
+            window.open(`https://api.whatsapp.com/send?phone=${phoneNoivos}&text=${encodeURIComponent(photoMsg)}`, '_blank');
+        }
+
+        function copyIBAN(elementId) {
+            const ibanText = document.getElementById(elementId).innerText;
+            navigator.clipboard.writeText(ibanText).then(() => {
+                alert('IBAN copiado para a área de transferência!');
+            }).catch(() => {
+                alert('Erro ao copiar IBAN.');
+            });
+        }
+    </script>
+</body>
+</html>
